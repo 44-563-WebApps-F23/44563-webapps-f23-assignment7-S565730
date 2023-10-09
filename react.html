@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>setTimeout use</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <h2>Timeout - Red in 3 seconds</h2>
+
+    <button type="button" class="btn btn-primary" onclick="buttonPress2()">
+        Click me change the color.</button>
+
+    <p id="targeted">I will become red </p>
+
+    <script>
+        let reactTime;
+        function buttonPress1() {
+            setTimeout(function () {
+                document.getElementById('targeted').style.color = "red"
+            }, 3000)
+        }
+
+        function buttonPress2() {
+            setTimeout(() => {
+                document.getElementById('targeted').style.color = "red"
+            }, 3000)
+        }
+
+        function recordTime() {
+            reactTime = Date.now();
+            console.log(reactTime);
+        }
+
+        function startTime() {
+            for (let i = 0; i < 9; i++) {
+                setTimeout(() => {
+                    document.getElementById('counter').innerHTML = i;
+                }, ((8 - i) * 1000))
+            }
+
+            setTimeout(() => { 
+            },8000)
+            
+            if(!reactTime){
+                document.getElementById('target').innerHTML = "Too Slow";
+            }
+            else{
+                let endTime=Date.now();
+                diff=Math.abs(endTime-reactTime);
+                document.getElementById('target').innerHTML="Time was"+diff;
+            }
+    }
+
+    </script>
+
+    <h1>Rachana Sri speed check</h1>
+    <div id="target">Your time</div>
+    <div id="counter">Count</div>
+
+    <button type="button" class="btn btn-primary" onclick="startTime()">
+        Start Timer</button>
+
+    <button type="button" class="btn btn-primary" onclick="recordTime()">
+        React</button>
+</body>
+
+</html>
