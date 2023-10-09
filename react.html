@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>setTimeout use</title>
+    <title>setTimeout</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -13,31 +13,31 @@
 
 <body>
 
-    <h2>Timeout - Red in 3 seconds</h2>
+    <h2>Timeout - orange in 3 seconds</h2>
 
     <button type="button" class="btn btn-primary" onclick="buttonPress2()">
         Click me change the color.</button>
 
-    <p id="targeted">I will become red </p>
+    <p id="targeted">I will become orange </p>
 
     <script>
         let reactTime;
         function buttonPress1() {
             setTimeout(function () {
-                document.getElementById('targeted').style.color = "red"
+                document.getElementById('targeted').style.color = "orange"
             }, 3000)
         }
 
         function buttonPress2() {
             setTimeout(() => {
-                document.getElementById('targeted').style.color = "red"
+                document.getElementById('targeted').style.color = "orange"
             }, 3000)
         }
 
         function recordTime() {
             reactTime = Date.now();
             console.log(reactTime);
-        }
+        }-
 
         function startTime() {
             for (let i = 0; i < 9; i++) {
