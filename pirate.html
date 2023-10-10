@@ -62,6 +62,7 @@
             </div>
         </div>
     </div>
+   
   </body>
     <script>
         let ids =[]
@@ -139,16 +140,8 @@
           help_text = document.getElementById("help")
           help_text.innerHTML=`Help report ${report}`
         }
-      
-        function reset() {
-                  checkCount = 0;
-                  penalty = 0
-                  treasureLocation = Math.round(Math.random() * (24));
-                  trapLocation = Math.round(Math.random() * (24));
-                  document.getElementById("locations").innerHTML = `Number of locations checked is ${checkCount}`
-                  document.getElementById("penalty").innerHTML = `Penalty is ${penalty}`
-      
-              }
+        
+        
             </script>
           
             </html>
