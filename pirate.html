@@ -13,53 +13,56 @@
 <body>
     <h1 class="text-primary" style="--bs-text-opacity: .5;">Find the treasure by Rachana sri Mandadi</h1><br>
     <div class="container-fluid">
+      <div class="" id="target">
+
         <div class="bg-dark p-2 text-black bg-opacity-25">Click on the locations to search
             for treasure, beware the traps</div>
         <div id="locations" class="bg-black p-2 text-black">Number of locations checked is zero</div>
         <div id="penalty" class="bg-info p-2 text-dark bg-opacity-10">Penalty is zero.</div>
-        <div id="penalty" class="bg-success p-2 text-dark bg-opacity-50">Click for help.</div>
-        <div id="help" class="p-3 mb-2 bg-dark-subtle text-emphasis-dark"> Help report.</div>
+        <div  class="bg-success p-2 text-dark bg-opacity-50" id="click_help" onclick="help()">Click for help.</div>
+        <div id="help" class="p-3 mb-2 bg-dark-subtle text-emphasis-dark" text-color:orange> Help report:-</div>
     </div>
-  
+  </div>
     <div class="container">
         <div class="image-container">
             <div class="row">
-                <div class="col-1"><img src="first.jpg" onclick="check(0)" alt="Position 1" width="100" height="100" id="loc1"></div>
-                <div class="col-1"><img src="first.jpg"  onclick="check(1)" alt="Position 2" width="100" height="100" id="loc2"></div>
-                <div class="col-1"><img src="first.jpg"  onclick="check(2)" alt="Position 3" width="100" height="100" id="loc3"></div>
-                <div class="col-1"><img src="first.jpg"  onclick="check(3)" alt="Position 4" width="100" height="100" id="loc4"></div>
-                <div class="col-1"><img src="first.jpg"  onclick="check(4)" alt="Position 5" width="100" height="100" id="loc5"></div>
+                <div class="col-1"><img src="first.jpg" id="0" onclick="check(0)" alt="Position 1" width="100" height="100" id="loc1"></div>
+                <div class="col-1"><img src="first.jpg" id="1" onclick="check(1)" alt="Position 2" width="100" height="100" id="loc2"></div>
+                <div class="col-1"><img src="first.jpg" id="2" onclick="check(2)" alt="Position 3" width="100" height="100" id="loc3"></div>
+                <div class="col-1"><img src="first.jpg" id="3" onclick="check(3)" alt="Position 4" width="100" height="100" id="loc4"></div>
+                <div class="col-1"><img src="first.jpg" id="4"onclick="check(4)" alt="Position 5" width="100" height="100" id="loc5"></div>
             </div>
             <div class="row">
-                <div class="col-1"><img src="first.jpg" onclick="check(5)" alt="Position 1" width="100" height="100" id="loc1"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(6)"  alt="Position 2" width="100" height="100" id="loc2"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(7)" alt="Position 3" width="100" height="100" id="loc3"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(8)" alt="Position 4" width="100" height="100" id="loc4"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(9)"  alt="Position 5" width="100" height="100" id="loc5"></div>
+                <div class="col-1"><img src="first.jpg" id="5" onclick="check(5)" alt="Position 1" width="100" height="100" id="loc1"></div>
+                <div class="col-1"><img src="first.jpg" id="6" onclick="check(6)"  alt="Position 2" width="100" height="100" id="loc2"></div>
+                <div class="col-1"><img src="first.jpg" id="7" onclick="check(7)" alt="Position 3" width="100" height="100" id="loc3"></div>
+                <div class="col-1"><img src="first.jpg" id="8" onclick="check(8)" alt="Position 4" width="100" height="100" id="loc4"></div>
+                <div class="col-1"><img src="first.jpg" id="9" onclick="check(9)"  alt="Position 5" width="100" height="100" id="loc5"></div>
             </div>
             <div class="row">
-                <div class="col-1"><img src="first.jpg" onclick="check(10)"  alt="Position 1" width="100" height="100" id="loc1"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(11)" alt="Position 2" width="100" height="100" id="loc2"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(12)" alt="Position 3" width="100" height="100" id="loc3"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(13)" alt="Position 4" width="100" height="100" id="loc4"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(14)" alt="Position 5" width="100" height="100" id="loc5"></div>
+                <div class="col-1"><img src="first.jpg" id="10" onclick="check(10)"  alt="Position 1" width="100" height="100" id="loc1"></div>
+                <div class="col-1"><img src="first.jpg" id="11" onclick="check(11)" alt="Position 2" width="100" height="100" id="loc2"></div>
+                <div class="col-1"><img src="first.jpg" id="12" onclick="check(12)" alt="Position 3" width="100" height="100" id="loc3"></div>
+                <div class="col-1"><img src="first.jpg" id="13" onclick="check(13)" alt="Position 4" width="100" height="100" id="loc4"></div>
+                <div class="col-1"><img src="first.jpg" id="14" onclick="check(14)" alt="Position 5" width="100" height="100" id="loc5"></div>
             </div>
             <div class="row">
-                <div class="col-1"><img src="first.jpg" onclick="check(15)" alt="Position 1" width="100" height="100" id="loc1"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(16)" alt="Position 2" width="100" height="100" id="loc2"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(17)" alt="Position 3" width="100" height="100" id="loc3"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(18)" alt="Position 4" width="100" height="100" id="loc4"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(10)" alt="Position 5" width="100" height="100" id="loc5"></div>
+                <div class="col-1"><img src="first.jpg" id="15" onclick="check(15)" alt="Position 1" width="100" height="100" id="loc1"></div>
+                <div class="col-1"><img src="first.jpg" id="16" onclick="check(16)" alt="Position 2" width="100" height="100" id="loc2"></div>
+                <div class="col-1"><img src="first.jpg" id="17" onclick="check(17)" alt="Position 3" width="100" height="100" id="loc3"></div>
+                <div class="col-1"><img src="first.jpg" id="18" onclick="check(18)" alt="Position 4" width="100" height="100" id="loc4"></div>
+                <div class="col-1"><img src="first.jpg" id="19" onclick="check(10)" alt="Position 5" width="100" height="100" id="loc5"></div>
             </div>
             <div class="row row-cols-auto">
-                <div class="col-1"><img src="first.jpg" onclick="check(20)" alt="Position 1" width="100" height="100" id="loc1"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(21)" alt="Position 2" width="100" height="100" id="loc2"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(22)" alt="Position 3" width="100" height="100" id="loc3"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(23)" alt="Position 4" width="100" height="100" id="loc4"></div>
-                <div class="col-1"><img src="first.jpg" onclick="check(24)" alt="Position 5" width="100" height="100" id="loc5"></div>
+                <div class="col-1"><img src="first.jpg" id="20"  onclick="check(20)" alt="Position 1" width="100" height="100" id="loc1"></div>
+                <div class="col-1"><img src="first.jpg" id="21"  onclick="check(21)" alt="Position 2" width="100" height="100" id="loc2"></div>
+                <div class="col-1"><img src="first.jpg" id="22" onclick="check(22)" alt="Position 3" width="100" height="100" id="loc3"></div>
+                <div class="col-1"><img src="first.jpg" id="23" onclick="check(23)" alt="Position 4" width="100" height="100" id="loc4"></div>
+                <div class="col-1"><img src="first.jpg" id="24" onclick="check(24)" alt="Position 5" width="100" height="100" id="loc5"></div>
             </div>
         </div>
     </div>
+  </body>
     <script>
         let ids =[]
         for(let i=0;i<25;i++)
@@ -90,7 +93,7 @@
           {
             tre_loc_img.src = "map.jpg"
             gameOver=true
-            penalty=penalty+4
+            penalty=penalty+3
           }
           else
           {
@@ -122,7 +125,7 @@
           {
             report = "Can smell it"
           }
-          else if(col_diff+row_diff==2)
+          else if(Math.abs(row - treasureRow) + Math.abs(col - treasureCol)===2)
           {
             report = "Close Matie"
           }
@@ -147,5 +150,5 @@
       
               }
             </script>
-            </body>
+          
             </html>
