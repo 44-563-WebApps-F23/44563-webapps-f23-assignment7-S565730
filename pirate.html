@@ -60,67 +60,92 @@
             </div>
         </div>
     </div>
-    <Script>
-        let checkCount=0;
-        let penalty=0;
-        let lastCheck=0;
-        let treasureLocation=5;
-        let trapLocation =18;
-        let gameOver=false;
-        let ids=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
-
-        function check(position){
-            if(gameOver) return;
-            else{
-                id=ids[position];
-                imageElement= document.getElementById(id);
-
-                if(id==treasureLocation){
-                    imageElement.src="treasure.jpg";
-                    gameOver=true;
-                    penalty=penalty-3;
-
-                }
-                else if(id==trapLocation){
-                    imageElement.src="map.jpg";
-                    gameOver=true;
-                    penalty=penalty+4;
-
-                }
-                else{
-                    imageElement.src="pirate.jpg";
-                }
-            }
-            checkCount=checkCount+1;
-            penalty=penalty+1;
-            document.getElementById("locations").innerHTML='Locations: ' +checkCount;
-            document.getElementById("penalty").innerHTML='penalty: ' +penalty;
-            lastCheck=position;
+    <script>
+        let ids = []
+        for(let i=0;i<25;i++)
+        {
+          ids[i]=i;
         }
-        function help(){
-            let lastRow=Math.floor(lastCheck/5);
-            let lastCol=lastCheck%5;
-            let tressureRow=Math.floor((treasureLocation-1)/5);
-            let tressureCol=(treasureLocation-1)%5;
-            
-            let far=Math.abs(lastRow-tressureRow)+Math.abs(tressureCol-lastCol);
-
-            if(far>2){
-                document.getElementById("help").innerHTML="Step Faster";
-            }
-            else if(far==2){
-                document.getElementById("help").innerHTML="Close Matie";
-            }
-            else{
-                document.getElementById("help").innerHTML="Can Smell It";
-            }
-            penalty=penalty+2;
-            document.getElementById("penalty").innerHTML='Penalties:'+penalty;
+        let checkCount = 0
+        let penalty = 0
+        let lastCheck = 0
+        let treasureLocation = 5
+        let trapLocation = 18
+        let gameOver = false
+        function check(p)
+        {
+          if(gameOver)
+          {
+            return
+          }
+          const img_id = ids[p]
+          tre_loc_img = document.getElementById(img_id)
+          if(p==treasureLocation)
+          {
+            tre_loc_img.src = "treasure.jpg"
+            gameOver=true
+            penalty = penalty-3
+          }
+          else if (p== trapLocation)
+          {
+            tre_loc_img.src = "map.jpg"
+            gameOver=true
+            penalty=penalty+4
+          }
+          else
+          {
+            tre_loc_img.src="pirate.jpg"
+          }
+          checkCount=checkCount+1
+          penalty=penalty+1
+          loc_text = document.getElementById("locations")
+          loc_text.innerHTML = `Number of locations checked is ${checkCount}`
+          pen_text = document.getElementById("penalty")
+          pen_text.innerHTML=`Penalty is ${penalty}`
+          lastCheck=p
+      
         }
-
-    </Script>
-
-
-</body>
-
-</html>
+        function help()
+        {
+          let col = lastCheck%5
+          let row = Math.floor(lastCheck/5)
+      
+          let treasureCol = treasureLocation%5
+          let treasureRow = Math.floor(treasureLocation/5)
+      
+          let col_diff = Math.abs(col-treasureCol) 
+          let row_diff = Math.abs(row-treasureRow)
+      
+          let report = ""
+      
+          if(((col_diff<=1)&&(row_diff==0))||((col_diff==0)&&(row_diff<=1)))
+          {
+            report = "Can smell it"
+          }
+          else if(col_diff+row_diff==2)
+          {
+            report = "Close Matie"
+          }
+          else
+          {
+            report = "Step Faster"
+          }
+          penalty=penalty+2
+          pen_text = document.getElementById("penalty")
+          pen_text.innerHTML=`Penalty is ${penalty}`
+          help_text = document.getElementById("help")
+          help_text.innerHTML=`Help report ${report}`
+        }
+      
+        function reset() {
+                  checkCount = 0;
+                  penalty = 0
+                  treasureLocation = Math.round(Math.random() * (24));
+                  trapLocation = Math.round(Math.random() * (24));
+                  document.getElementById("locations").innerHTML = `Number of locations checked is ${checkCount}`
+                  document.getElementById("penalty").innerHTML = `Penalty is ${penalty}`
+      
+              }
+            </script>
+            </body>
+            </html>
