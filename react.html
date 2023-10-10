@@ -12,64 +12,55 @@
 </head>
 
 <body>
-    <h1>Rachana Sri speed check</h1> 
-    <h2>Timeout - red in 3 seconds</h2>
+    
 
-    <button type="button" class="btn btn-primary" onclick="buttonPress2()">
-        Click me change the color.</button>
+    <h1>Rachana Sri speed check</h1>
+    <div id="target">Your Time:</div>
+    <div id="counter">Count:</div>
 
-    <p id="targeted">I will become red </p>
+    <div class="container text-center">
+        <button type="button" class="btn btn-success"  onclick="startTime()">Start Timer</button>
+        <button type="button" class="btn btn-success" onclick="recordTime()">React</button>
+    </div>
+  
+ 
+  
+  <script> 
 
-    <script>
-        let reactTime;
-        function buttonPress1() {
-            setTimeout(function () {
-                document.getElementById('targeted').style.color = "red"
-            }, 3000)
-        }
+  let reactTime = undefined;
+  function recordTime()
+  {
+    reactTime = Date.now()
+    console.log("Current time in milli seconds: "+reactTime)
+  }
 
-        function buttonPress2() {
-            setTimeout(() => {
-                document.getElementById('targeted').style.color = "red"
-            }, 3000)
-        }
-
-        function recordTime() {
-            reactTime = Date.now();
-            console.log(reactTime);
-        }-
-
-        function startTime() {
-            for (let i = 0; i < 9; i++) {
-                setTimeout(() => {
-                    document.getElementById('counter').innerHTML = i;
-                }, ((8 - i) * 1000))
-            }
-
-            setTimeout(() => { 
-            },8000)
-            
-            if(!reactTime){
-                document.getElementById('target').innerHTML = "Too Slow";
-            }
-            else{
-                let endTime=Date.now();
-                diff=Math.abs(endTime-reactTime);
-                document.getElementById('target').innerHTML="Time was"+diff;
-            }
+  function startTime()
+  {
+    reactTime = undefined;
+    endTime = Date.now();
+    let randomCountDown = Math.round(Math.random() * (10 - 2) + 2)
+    for(let i=0;i<randomCountDown;i++)
+    {
+        setTimeout( function () {
+            document.getElementById('counter').innerHTML = `Count: ${i}`
+        } , (randomCountDown-i)*1000)
     }
+    setTimeout( function () {document.getElementById('counter').innerHTML = `Count: ${i}`} , 8000)
+    setTimeout(function()
+    {
+        if (reactTime == undefined) 
+        {
+            document.getElementById("target").innerHTML = "Too Slow";
+        }
+        else
+        {
+            const elapsed_time =Math.abs(endTime-reactTime)
+            document.getElementById("target").innerHTML="Time was "+elapsed_time
+        }
+    },8000)
 
-    </script>
+  }
 
-   
-    <div id="target">Your time</div>
-    <div id="counter">Count</div>
-
-    <button type="button" class="btn btn-primary" onclick="startTime()">
-        Start Timer</button>
-
-    <button type="button" class="btn btn-primary" onclick="recordTime()">
-        React</button>
-</body>
-
-</html>
+  </script>
+  </body>
+  </html>
