@@ -13,24 +13,24 @@
 
 <body>
 
-    <h2>Timeout - orange in 3 seconds</h2>
+    <h2>Timeout - red in 3 seconds</h2>
 
     <button type="button" class="btn btn-primary" onclick="buttonPress2()">
         Click me change the color.</button>
 
-    <p id="targeted">I will become orange </p>
+    <p id="targeted">I will become red </p>
 
     <script>
         let reactTime;
         function buttonPress1() {
             setTimeout(function () {
-                document.getElementById('targeted').style.color = "orange"
+                document.getElementById('targeted').style.color = "red"
             }, 3000)
         }
 
         function buttonPress2() {
             setTimeout(() => {
-                document.getElementById('targeted').style.color = "orange"
+                document.getElementById('targeted').style.color = "red"
             }, 3000)
         }
 
