@@ -42,12 +42,12 @@
 			  <div class="merger">row item 3</div>  
 			</div>
 		
-		<p> Press the button to create an new element of type div and then add it to the container.</p>
+		<br>
 		<div class=" container text-center">
 			<button onclick="makeNewDiv()">Add end</button>
 			<button onclick="addFront()" >Add Front</button>
 			<button onclick="remove()">Remove</button>
-			
+			<button onclick="swap()">Swap</button>
 		</div>
 			
 		
@@ -85,6 +85,19 @@
 			let childElement = document.getElementsByClassName("merger")[0]
 			parent.insertBefore(element,childElement)
 		}
+		function swap()
+  {
+    let mergerItemss = document.getElementsByClassName("merger")
+    let mergerItemssLength = mergerItemss.length
+    let firstElement = mergerItemss[Math.round(Math.random()*(mergerItemssLength-1))]
+    let secondElement = mergerItemss[Math.round(Math.random()*(mergerItemssLength-1))]
+
+    let parentElement = firstElement.parentNode
+    
+    const siblingA = firstElement.nextSibling === secondElement ? firstElement : firstElement.nextSibling;
+    secondElement.parentNode.insertBefore(firstElement, secondElement);
+    parentElement.insertBefore(secondElement, siblingA);
+  }
 		</script>
 		</body>
 		</html>
