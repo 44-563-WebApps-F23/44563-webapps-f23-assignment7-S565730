@@ -22,45 +22,33 @@
         <button type="button" class="btn btn-success"  onclick="startTime()">Start Timer</button>
         <button type="button" class="btn btn-success" onclick="recordTime()">React</button>
     </div>
-  
- 
-  
-  <script> 
-
-  let reactTime = undefined;
-  function recordTime()
-  {
-    reactTime = Date.now()
-    console.log("Current time in milli seconds: "+reactTime)
-  }
-
-  function startTime()
-  {
-    reactTime = undefined;
-    endTime = Date.now();
-    let randomCountDown = Math.round(Math.random() * (10 - 2) + 2)
-    for(let i=0;i<randomCountDown;i++)
-    {
-        setTimeout( function () {
-            document.getElementById('counter').innerHTML = `Count: ${i}`
-        } , (randomCountDown-i)*1000)
-    }
-    setTimeout( function () {document.getElementById('counter').innerHTML = `Count: ${i}`} , 8000)
-    setTimeout(function()
-    {
-        if (reactTime == undefined) 
-        {
-            document.getElementById("target").innerHTML = "Too Slow";
-        }
-        else
-        {
-            const elapsed_time =Math.abs(endTime-reactTime)
-            document.getElementById("target").innerHTML="Time was "+elapsed_time
-        }
-    },8000)
-
-  }
-
-  </script>
-  </body>
-  </html>
+    <script> 
+        var reactTime = undefined;
+   
+   function recordTime() 
+   {
+       reactTime = Date.now();
+       console.log("React time recorded:", reactTime);
+   }
+   document.getElementById("reactButton").onclick = recordTime;
+   function startTime() {
+               for (let i = 0; i <= 8; i++) {
+                   setTimeout(function () {
+                       document.getElementById("count").innerHTML = "Count: " + i;
+                   }, (8 - i) * 1000);
+               }
+           }
+           setTimeout(function () {
+               if (reactTime === undefined) {
+                   document.getElementById("target").innerHTML = "Too Slow";
+               } else {
+                   var endTime = Date.now();
+                   var elapsed = endTime - reactTime;
+                   document.getElementById("target").innerHTML = "Time was " + elapsed + " ms";
+               }
+           }, 8000);
+           document.getElementById("startButton").onclick = startTime;
+     </script>
+   
+   </body>
+   </html>
