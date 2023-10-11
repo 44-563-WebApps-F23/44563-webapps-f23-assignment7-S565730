@@ -15,7 +15,7 @@
     <div class="container-fluid">
       <div class="" id="target">
 
-        <div class="bg-dark p-2 text-green bg-opacity-25">Click on the locations to search
+        <div class="bg-dark p-2 text-white bg-opacity-25">Click on the locations to search
             for treasure, beware the traps</div>
         <div id="locations" class="bg-black p-2 text-black">Number of locations checked is zero</div>
         <div id="penalty" class="bg-info p-2 text-dark bg-opacity-10">Penalty is zero.</div>
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-   
+    <div id="button" type="button" class="btn btn-success" onclick="reset()">New Game</div>
   </body>
     <script>
         let ids =[]
@@ -141,7 +141,15 @@
           help_text.innerHTML=`Help report ${report}`
         }
         
-        
+        function reset() {
+            checkCount = 0;
+            penalty = 0
+            treasureLocation = Math.round(Math.random() * (24));
+            trapLocation = Math.round(Math.random() * (24));
+            document.getElementById("locations").innerHTML = `Number of locations checked is ${checkCount}`
+            document.getElementById("penalty").innerHTML = `Penalty is ${penalty}`
+
+        }
             </script>
           
             </html>
